@@ -20,3 +20,5 @@ jobs:
           source_branch: 1.1
           upstream_branch: 1.1
           pr_labels: template_sync
+          target_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          source_gh_token: ${{ secrets.GITHUB_TOKEN }}
