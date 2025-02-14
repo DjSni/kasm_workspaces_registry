@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Template Sync
+      - name: Template Sync 1.1
         uses: AndreasAugustin/actions-template-sync@v2
         with:
           source_repo_path: kasmtech/workspaces_registry_template
@@ -22,3 +22,24 @@ jobs:
           pr_labels: template_sync
           target_gh_token: ${{ secrets.GITHUB_TOKEN }}
           source_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_branch_name_prefix: chore/template_sync_1_1
+      - name: Template Sync 1.1
+        uses: AndreasAugustin/actions-template-sync@v2
+        with:
+          source_repo_path: kasmtech/workspaces_registry_template
+          source_branch: 1.0
+          upstream_branch: 1.0
+          pr_labels: template_sync
+          target_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          source_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_branch_name_prefix: chore/template_sync_1_0
+      - name: Template Sync develop
+        uses: AndreasAugustin/actions-template-sync@v2
+        with:
+          source_repo_path: kasmtech/workspaces_registry_template
+          source_branch: develop
+          upstream_branch: develop
+          pr_labels: template_sync
+          target_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          source_gh_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_branch_name_prefix: chore/template_sync_dev
