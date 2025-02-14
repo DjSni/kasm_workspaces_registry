@@ -8,11 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync:
+  sync_1_1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: 1.1
       - name: Template Sync 1.1
         uses: AndreasAugustin/actions-template-sync@v2
         with:
@@ -23,7 +25,15 @@ jobs:
           target_gh_token: ${{ secrets.GITHUB_TOKEN }}
           source_gh_token: ${{ secrets.GITHUB_TOKEN }}
           pr_branch_name_prefix: chore/template_sync_1_1
-      - name: Template Sync 1.1
+
+  sync_1_0:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: 1.0
+      - name: Template Sync 1.0
         uses: AndreasAugustin/actions-template-sync@v2
         with:
           source_repo_path: kasmtech/workspaces_registry_template
@@ -33,6 +43,14 @@ jobs:
           target_gh_token: ${{ secrets.GITHUB_TOKEN }}
           source_gh_token: ${{ secrets.GITHUB_TOKEN }}
           pr_branch_name_prefix: chore/template_sync_1_0
+
+  sync_dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: develop
       - name: Template Sync develop
         uses: AndreasAugustin/actions-template-sync@v2
         with:
