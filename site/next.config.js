@@ -5,7 +5,7 @@ const nextConfig = {
     name: 'Snis Kasm Registry',
     description: 'My Store of Kasm workspaces.',
     icon: '/img/logo.svg',
-    listUrl: 'https://djsni.github.io/kasm_workspaces_registry/list.json',
+    listUrl: 'https://djsni.github.io/kasm_workspaces_registry/',
     contactUrl: 'https://github.com/DjSni/kasm_workspaces_registry',
     schema: '1.0',
   },
