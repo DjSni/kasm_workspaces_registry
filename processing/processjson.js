@@ -12,7 +12,7 @@ if (!fs.existsSync(dir + "/icons")) {
 	fs.mkdirSync(dir + "/icons");
 }
 
-glob("**/app.json", async function (err, files) {
+glob("**/workspace.json", async function (err, files) {
 	if (err) {
 		console.log(
 			"cannot read the folder, something goes wrong with glob",
@@ -20,8 +20,8 @@ glob("**/app.json", async function (err, files) {
 		);
 	}
 
-	let apptotal = files.length;
-	let apps = [];
+	let workspacetotal = files.length;
+	let workspaces = [];
 	let promises = [];
 
 	const options = {
@@ -29,18 +29,31 @@ glob("**/app.json", async function (err, files) {
 		encoding: "hex",
 	};
 
+	let channels = new Set()
+	let versions = new Set()
+
 	for (const file of files) {
 		//files.forEach(async function(file) {
 
-		let folder = file.replace("/app.json", "");
+		let folder = file.replace("/workspace.json", "");
 
 		let hash = await hashElement(folder, options);
 		let filedata = fs.readFileSync(file);
 
 		let parsed = JSON.parse(filedata);
 		parsed.sha = hash.hash;
-		console.log(parsed.name + ' added')
-		apps.push(parsed);
+		console.log(parsed.friendly_name + ' added')
+		parsed.compatibility.forEach((element, index) => {
+			if ('available_tags' in element) {
+				element.available_tags.forEach((el) => {
+					channels.add(el)
+				})
+			}
+			if ('version' in element) {
+				versions.add(element.version)
+			}
+		})
+		workspaces.push(parsed);
 
 		if (fs.existsSync(folder + "/" + parsed.image_src)) {
 			let imagedata = fs.readFileSync(folder + "/" + parsed.image_src);
@@ -53,17 +66,26 @@ glob("**/app.json", async function (err, files) {
 
 	let json = {
 		name: nextConfig.env.name || 'Unknown store',
-		appcount: apptotal,
-		schema_version: nextConfig.env.schema || '1.0',
+		workspacecount: workspacetotal,
 		icon: nextConfig.env.icon || null,
 		description: nextConfig.env.description || null,
 		list_url: nextConfig.env.listUrl || null,
 		contact_url: nextConfig.env.contactUrl || null,
 		modified: Date.now(),
-		apps: apps,
+		workspaces: workspaces,
+		channels: [...channels],
+		default_channel: 'develop'
 	};
+
+	if (channels.size === 0) {
+		json.default_channel = null
+	}
 
 	let data = JSON.stringify(json);
 
 	fs.writeFileSync(dir + "/list.json", data);
+	fs.writeFileSync(dir + "/versions.json", JSON.stringify({
+		versions: [...versions]
+	}));
+
 });
