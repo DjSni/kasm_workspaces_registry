@@ -2,7 +2,6 @@
   "description": "Winbox is a small utility that allows administration of MikroTik RouterOS using a fast and simple GUI.",
   "docker_registry": "https://index.docker.io/v1/",
   "image_src": "winbox.png",
-  "name": "obebete/winbox:latest",
   "run_config": {
     "hostname": "kasm"
   },
@@ -22,11 +21,16 @@
     "amd64"
   ],
   "compatibility": [
-    "1.13.x",
-    "1.14.x",
-    "1.15.x",
-    "1.16.x",
-    "1.17.x"
-  ],
-  "uncompressed_size_mb": 1500
+    {
+      "version": [
+        "1.16.x",
+        "1.17.x"
+      ],
+      "image": "obebete/winbox:latest",
+      "uncompressed_size_mb": 1500,
+      "available_tags": [
+        "latest"
+      ]
+    }
+  ]
 }
