@@ -1,0 +1,42 @@
+{
+  "description": "Winbox4 is a small utility that allows administration of MikroTik RouterOS using a fast and simple GUI.",
+  "docker_registry": "https://git.snis.pw/",
+  "image_src": "winbox.png",
+  "run_config": {
+    "hostname": "winbox4"
+  },
+  "exec_config": {
+    "go": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --go --url \"$KASM_URL\"'"
+    },
+    "assign": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
+    }
+  },
+  "categories": [
+    "Remote Access"
+  ],
+  "friendly_name": "Winbox4",
+  "architecture": [
+    "amd64"
+  ],
+  "compatibility": [
+    {
+      "version": "1.16.x",
+      "image": "git.snis.pw/docker/kasm-images:winbox-1.16.1",
+      "uncompressed_size_mb": 1200,
+      "available_tags": [
+        "winbox-1.16.1"
+      ]
+    },
+    {
+      "version": "1.17.x",
+      "image": "git.snis.pw/docker/kasm-images:winbox-latest",
+      "uncompressed_size_mb": 1200,
+      "available_tags": [
+        "winbox-latest",
+        "winbox-1.17.0"
+      ]
+    }
+  ]
+}
