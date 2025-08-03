@@ -1,9 +1,2 @@
 1.0
 1.1
-chore_template_sync_1_0_1d218d8
-chore_template_sync_1_0_68bc35f
-chore_template_sync_1_1_1d218d8
-chore_template_sync_1_1_68bc35f
-chore_template_sync_68bc35f
-chore_template_sync_dev_1d218d8
-chore_template_sync_dev_68bc35f
