@@ -11,7 +11,7 @@ const nextConfig = {
     contactUrl: 'https://github.com/DjSni/kasm_workspaces_registry',
   },
   reactStrictMode: true,
-  basePath: '/kasm-registry/1.0',
+  basePath: '/kasm_workspaces_registry/1.1',
   trailingSlash: true,
   images: {
     unoptimized: true,
