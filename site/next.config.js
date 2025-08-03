@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  output: 'export',
+  distDir: '../public',
   env: {
     name: 'Snis Kasm Registry',
     description: 'My Store of Kasm workspaces.',
@@ -9,7 +11,6 @@ const nextConfig = {
     contactUrl: 'https://github.com/DjSni/kasm_workspaces_registry',
   },
   reactStrictMode: true,
-  swcMinify: true,
   basePath: '/kasm-registry/1.0',
   trailingSlash: true,
   images: {
