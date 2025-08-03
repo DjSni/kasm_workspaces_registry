@@ -26,7 +26,7 @@
       "image": "git.snis.pw/docker/kasm-images:winbox-1.16.1",
       "uncompressed_size_mb": 1200,
       "available_tags": [
-        "winbox-1.16.1"
+        "1.16.1"
       ]
     },
     {
@@ -34,8 +34,8 @@
       "image": "git.snis.pw/docker/kasm-images:winbox-latest",
       "uncompressed_size_mb": 1200,
       "available_tags": [
-        "winbox-latest",
-        "winbox-1.17.0"
+        "latest",
+        "1.17.0"
       ]
     }
   ]
