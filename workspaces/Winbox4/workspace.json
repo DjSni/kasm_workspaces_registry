@@ -1,7 +1,7 @@
 {
   "description": "Winbox4 is a small utility that allows administration of MikroTik RouterOS using a fast and simple GUI.",
   "docker_registry": "https://git.snis.pw/",
-  "image_src": "winbox.png",
+  "image_src": "winbox4.png",
   "run_config": {
     "hostname": "winbox4"
   },
