@@ -22,10 +22,15 @@
   ],
   "compatibility": [
     {
-      "version": [
-        "1.16.x",
-        "1.17.x"
-      ],
+      "version": "1.16.x",
+      "image": "dersni/docker-kasm-ubuntu-dektop-edit:latest",
+      "uncompressed_size_mb": 5000,
+      "available_tags": [
+        "latest"
+      ]
+    },
+    {
+      "version": "1.17.x",
       "image": "dersni/docker-kasm-ubuntu-dektop-edit:latest",
       "uncompressed_size_mb": 5000,
       "available_tags": [
