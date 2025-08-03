@@ -26,7 +26,8 @@
       "image": "git.snis.pw/docker/kasm-images:ubuntu-desktop-1.16.1",
       "uncompressed_size_mb": 1200,
       "available_tags": [
-        "1.16.1"
+        "latest",
+        "ubuntu-desktop-1.16.1"
       ]
     },
     {
@@ -35,7 +36,7 @@
       "uncompressed_size_mb": 1200,
       "available_tags": [
         "latest",
-        "1.17.0"
+        "ubuntu-desktop-1.17.0"
       ]
     }
   ]
