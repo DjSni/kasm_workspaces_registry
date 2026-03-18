@@ -38,7 +38,7 @@
       ]
     },
     {
-      "version": "1.18.0",
+      "version": "1.18.x",
       "image": "dersni/kasm-images:winbox-1.18.0",
       "uncompressed_size_mb": 1200,
       "available_tags": [
