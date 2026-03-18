@@ -36,6 +36,14 @@
       "available_tags": [
         "latest"
       ]
+    },
+    {
+      "version": "1.18.x",
+      "image": "obebete/winbox:latest",
+      "uncompressed_size_mb": 1500,
+      "available_tags": [
+        "latest"
+      ]
     }
   ]
 }
