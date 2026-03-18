@@ -26,7 +26,6 @@
       "image": "dersni/kasm-images:ubuntu-desktop-1.16.1",
       "uncompressed_size_mb": 3300,
       "available_tags": [
-        "latest",
         "ubuntu-desktop-1.16.1"
       ]
     },
@@ -35,8 +34,16 @@
       "image": "dersni/kasm-images:ubuntu-desktop-1.17.0",
       "uncompressed_size_mb": 3300,
       "available_tags": [
-        "latest",
         "ubuntu-desktop-1.17.0"
+      ]
+    },
+    {
+      "version": "1.18.x",
+      "image": "dersni/kasm-images:ubuntu-desktop-1.18.0",
+      "uncompressed_size_mb": 3300,
+      "available_tags": [
+        "ubuntu-desktop-1.18.0",
+        "latest"
       ]
     }
   ]
